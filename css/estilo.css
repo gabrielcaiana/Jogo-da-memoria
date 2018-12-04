@@ -1,0 +1,96 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #fff url('../img/background.png');
+    font-family: 'Mali', cursive;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1 {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+/*
+* estilo para o painel de pontos
+*/
+.painel-pontos {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+.painel-pontos .estrelas  {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+.painel-pontos .estrelas li {
+    list-style: none;
+    display: inline-block;
+}
+.painel-pontos .reiniciar {
+    float: right;
+    cursor: pointer;
+}
+/*
+* estilo para o deck e cards
+*/
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+.deck .card.abrir {
+    transform: rotateY(0);
+    background: #2ecc71;
+    cursor: default;
+}
+.deck .card.mostrar {
+    font-size: 33px;
+}
+.deck .card.match {
+    cursor: default;
+    background: #1abc9c;
+    font-size: 33px;
+}

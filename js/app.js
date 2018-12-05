@@ -37,4 +37,25 @@ function controlCard() {
     });
 }
 
+// Função abrir ou fechar card
+function abrir_ou_fechar(abrirOuFechar, card){
+    if(card != null){
+        if(abrirOuFechar == true) {
+            setTimeout(function(){ card.css('transform','rotateY(50deg)'); }, 100);
+			setTimeout(function(){ card.css('transform','rotateY(100deg)'); }, 150);
+			setTimeout(function(){ card.css('transform','rotateY(130deg)'); }, 200);
+			setTimeout(function(){ card.css('transform','rotateY(180deg)'); }, 250);
+			setTimeout(function(){ card.css('background','#02b3e4'); }, 250);
+			setTimeout(function(){ card.addClass('open show'); }, 250);
+        }else {
+            setTimeout(function(){ card.css('background','#2e3d49'); }, 100);
+			setTimeout(function(){ card.removeClass('open show'); }, 100);
+			setTimeout(function(){ card.css('transform','rotateY(50deg)'); }, 100);
+			setTimeout(function(){ card.css('transform','rotateY(100deg)'); }, 150);
+			setTimeout(function(){ card.css('transform','rotateY(130deg)'); }, 200);
+			setTimeout(function(){ card.css('transform','rotateY(180deg)'); }, 250);
+			setTimeout(function(){ blockCard($('ul.deck li'),false);}, 260);
+        }
+    }
+}
 

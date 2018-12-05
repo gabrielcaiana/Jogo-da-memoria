@@ -160,5 +160,12 @@ function naoEIgual() {
     },1000);
 }
 
-
+// função que remove o efeito do card
+function removeEfeito() {
+    if(selecionado != null) {
+        setTimeout(function(){
+            if(selecionado != null)selecionado.css("background", "#2e3d49");
+        },1000);
+    }
+}
 

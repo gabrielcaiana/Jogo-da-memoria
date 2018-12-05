@@ -7,6 +7,7 @@ let list_encontrados = [];
 let nameClassFirst;
 let nameClassFirstSecond;
 let list_card_reais = [];
+let colors = ["#ee82ee","#a9a9a9","#40e0d0","#ffff00" ,"#f0e68c","#dc143c","#7fff00","#f4a460"];
 
 controlCard();
 
@@ -33,6 +34,12 @@ function controlCard() {
                 list_card_reais[1] = $(this);
                 abrir_ou_fechar(true, selecionado);
             }
+
+            // Verificando se card 1 é igual ao card 2
+
+                if(list_selecionados[0] === list_selecionados[1] ){
+
+                }
         });
     });
 }
@@ -54,7 +61,7 @@ function abrir_ou_fechar(abrirOuFechar, card){
 			setTimeout(function(){ card.css('transform','rotateY(100deg)'); }, 150);
 			setTimeout(function(){ card.css('transform','rotateY(130deg)'); }, 200);
 			setTimeout(function(){ card.css('transform','rotateY(180deg)'); }, 250);
-			setTimeout(function(){ blockCard($('ul.deck li'),false);}, 260);
+			setTimeout(function(){ bloquearCard($('ul.deck li'),false);}, 260);
         }
     }
 }
@@ -69,3 +76,17 @@ function bloquearCard(objetoSelecionado, block){
         }
     }
 }
+
+// Função para aplicar efeito no card após o acerto
+function efeitoCardCorreto(cartaSelecionada, auxiliar) {
+    if(cartaSelecionada != null) {
+        if(auxiliar == true) {
+            cartaSelecionada.animate({height:"80px"},200);
+            cartaSelecionada.animate({height:"125px"},300);
+        }else{
+            cartaSelecionada.animate({height:"80px"},300);
+            cartaSelecionada.animate({height:"80px"},450);
+        }
+    }
+}
+

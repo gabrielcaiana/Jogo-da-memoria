@@ -59,3 +59,13 @@ function abrir_ou_fechar(abrirOuFechar, card){
     }
 }
 
+//função bloquear card
+function bloquearCard(objetoSelecionado, block){
+    if(objetoSelecionado != null){
+        if(block == true){
+            objetoSelecionado.css("pointer-events", 'none');
+        }else{
+            objetoSelecionado.css("pointer-events", 'auto');
+        }
+    }
+}

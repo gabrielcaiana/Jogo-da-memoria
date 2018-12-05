@@ -9,6 +9,7 @@ let nameClassSecond;
 let list_card_reais = [];
 let colors = ["#ee82ee","#a9a9a9","#40e0d0","#ffff00" ,"#f0e68c","#dc143c","#7fff00","#f4a460"];
 let index_colors = 0;
+let hits = [];
 
 controlCard();
 
@@ -38,6 +39,8 @@ function controlCard() {
                   // Verificando se card 1 é igual ao card 2
 
                   if(list_selecionados[0] === list_selecionados[1] ){
+                      hits.push(list_selecionados[0,1]);
+                      wins();
                     efeitoCardCorreto(selecionado_antes,false);
                     if(colors[index_colors]!= null){
                         igual(colors[index_colors]);
@@ -121,10 +124,7 @@ function efeitoCardCorreto(cartaSelecionada, auxiliar) {
     }
 }
 
-//função para adicionar objeto encontrado
-function addClassParaListaEncontrados(objetoEncontrado) {
-    list_encontrados.push(objetoEncontrado);
-}
+
 
 // função cards iguais colors
 function igual(color) {
@@ -141,13 +141,6 @@ function igual(color) {
             efeitoCardCorreto(selecionado,true);
         },200);
 
-        addClassParaListaEncontrados(selecionado.children().attr('class'));
-        pair = true;
-        list_encontrados.splice(0,2);
-        if(list_encontrados.length == 8) {
-            alert('Você Ganhou :D');
-        }
-
     }
 } 
 
@@ -163,9 +156,18 @@ function naoEIgual() {
 // função que remove o efeito do card
 function removeEfeito() {
     if(selecionado != null) {
-        setTimeout(function(){
+        setTimeout(function(){abrir_ou_fechar(false, selecionado);
             if(selecionado != null)selecionado.css("background", "#2e3d49");
         },1000);
     }
+}
+
+//função jogo ganho
+function wins() {
+    setTimeout(function(){
+        if(hits.length == 8){
+            alert('Voce Ganhou :D');
+        }
+    },02000);
 }
 

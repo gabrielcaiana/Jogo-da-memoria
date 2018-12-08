@@ -1,6 +1,8 @@
+
 html {
     box-sizing: border-box;
 }
+
 *,
 *::before,
 *::after {
@@ -26,6 +28,7 @@ body{
 h1 {
     text-transform: uppercase;
     font-weight: 400;
+    font-family: 'Mali', cursive !important;
 }
 /*
 * estilo para o painel de pontos
@@ -83,7 +86,7 @@ h1 {
 }
 .deck .card.open {
     transform: rotateY(0);
-    background: #2ecc71;
+    background: blue;
     cursor: default;
 }
 .deck .card.show {
@@ -94,3 +97,117 @@ h1 {
     background: #1abc9c;
     font-size: 33px;
 }
+
+/*Estilo Modal Inicial*/
+#myModal {
+    text-align: center;
+}
+#myModal p {
+    font-size: 1.3em;
+}
+.w3-modal-content {
+    padding: 20px !important;
+}
+
+/* Medias Querys*/
+
+@media (max-width: 800px) {
+    .deck {
+        width: 565px !important;
+        min-height: 575px !important;
+    }
+    ul.deck {
+        padding:20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .deck {
+        width: 485px !important;
+        min-height: 300px !important;
+        height: 550px;
+        
+    }
+    .deck .card {
+        width:  90px !important;
+        height: 115px !important;
+        margin: 4px;
+        
+    }
+
+    h1 {
+        font-size: 30px !important;
+    }
+    .painel-pontos {
+        width: 280px; 
+    }
+    
+}
+
+@media (max-width: 550px) {
+    .deck {
+        width: 425px !important;
+        min-height: 300px !important;
+        height: 520px !important;
+    }
+    .deck .card {
+        width: 85px !important;
+        height: 100px !important;
+    }
+}
+
+@media (max-width: 470px) {
+    .deck {
+        width: 365px !important;
+        min-height: 300px !important;
+        height: 520px !important;
+    }
+    .deck .card {
+        width: 65px !important;
+        height: 90px !important;
+    }
+    h1 {
+        font-size: 26px !important;
+    }
+    .painel-pontos {
+        width: 250px; 
+    }
+}
+
+@media (max-width:375px) {
+    .deck {
+        width: 325px !important;
+        min-height: 300px !important;
+        height: 480px !important;
+    }
+    .deck .card {
+        width: 55px !important;
+        height: 80px !important;
+    }
+    h1 {
+        font-size: 23px !important;
+    }
+    .painel-pontos {
+        width: 215px; 
+    }
+}
+
+@media (max-width: 320px) {
+    .deck {
+        width: 275px !important;
+        min-height: 300px !important;
+        height: 425px !important;
+    }
+    .deck .card {
+        width: 50px !important;
+        height: 80px !important;
+    }
+    h1 {
+        font-size: 23px !important;
+    }
+    .painel-pontos {
+        width: 215px; 
+    }
+}
+
+

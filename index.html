@@ -12,10 +12,13 @@
             <title>Jogo da memoria</title>
             <!--CSS - BOOTSTRAP -->
             <link rel="stylesheet" href="css/estilo.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
             <!-- FONTES -->
             <link href="https://fonts.googleapis.com/css?family=Mali:300,300i,400,500,500i,700" rel="stylesheet">
             <!-- ICONES-->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+            <!-- MODAL -->
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
         </head>
             <body>
@@ -29,13 +32,13 @@
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
                     </ul><!-- end estrelas -->
 
-                    <span class="movimentos">3</span> Movimentos
+                    <span class="movimentos" value="erros"></span>
+                    <span id="tempo">00:00</span>
 
                     <div class="reiniciar">
-                        <i class="fa fa-repeat"></i>
+                        <i class="fa fa-repeat" onclick="pararTempo();"></i>
                     </div> <!-- end reiniciar -->
                 </section><!-- end painel-pontos -->
 
@@ -89,6 +92,73 @@
                             <i class="fa fa-cube"></i>
                         </li>
                 </ul><!-- end deck -->
+
+                <!-- Modal Jogo Ganho-->
+                <div id="id02" class="w3-modal">
+                    <div class="w3-modal-content w3-animate-zoom">
+  
+                      <header class="w3-container w3-teal"> 
+                        <span onclick="document.getElementById('id02').style.display='none';pararTempo()" class="w3-button w3-display-topright">&times;</span>
+                        <h3>PARABÉNS VOCÊ GANHOU :D</h3>
+                      </header>
+                      <div class="w3-container">
+                          <section class="sessao-vencedor">
+                              <div class="div-tempo">
+                                  <br>
+  
+                                  <table class="w3-table-all w3-centered w3-large">
+                                      <tr class="w3-light-red">
+                                        <th>Tempo Percorrido</th>
+                                        <th>Estrelas</th>
+                                      </tr>
+                                      <tr>
+                                        <td id="tempo-percorrido">02:00</td>
+                                        <td id="winning-stars">
+                                          <ul class="stars">
+                                              <li><i class="fa fa-star"></i></li>
+                                              <li><i class="fa fa-star"></i></li>
+                                              <li><i class="fa fa-star"></i></li>
+                                          </ul>
+                                        </td>
+                                      </tr>
+                                  </table>
+                                  
+                              </div>
+                              <div>
+                            </div>
+  
+                          <button class="w3-btn w3-blue w3-border w3-round-large" onclick="document.getElementById('id02').style.display='none';pararTempo();">Tente Novamente</button>
+                        </section>
+                      </div>
+               
+                    </div>
+                  </div>
+              <!-- Fim Modal Vencedor --> 
+
+                <!-- Modal que aparece no inicio do jogo  fonte -> W3 Schools-->
+                <div id="myModal" class="w3-container">
+                    <!--<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>-->
+                  
+                    <div id="id01" class="w3-modal">
+                      <div class="w3-modal-content w3-animate-zoom">
+                        <div class="w3-container">
+                          <!--<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>-->
+                          <section>
+                            <h1>Bem Vindo Ao Jogo Da Memória</h1>
+                            <p>Você terá 10 segundos para memorizar as cartas</p>
+                            <h2>Boa Sorte :D</h2>
+                        </section>
+                        <footer>
+                                <div>
+                                    <button class="w3-btn w3-green w3-round" onclick="document.getElementById('id01').style.display='none';pararTempo()">
+                                        Iniciar
+                                    </button>
+                                </div>
+                              </footer>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div><!-- end container -->
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>

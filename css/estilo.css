@@ -15,7 +15,7 @@ body {
     margin: 0;
     padding: 0;
 }
-body{
+body {
     background: #fff url('../img/background.png');
     font-family: 'Mali', cursive;
 }
@@ -51,6 +51,9 @@ h1 {
 .painel-pontos .reiniciar {
     float: right;
     cursor: pointer;
+}
+.moves {
+    display:inline;
 }
 /*
 * estilo para o deck e cards
@@ -108,6 +111,27 @@ h1 {
 .w3-modal-content {
     padding: 20px !important;
 }
+
+.w3-container, .w3-panel {
+    width: 95%;
+}
+dl, ol, ul {
+    list-style: none;
+    display: inline flex;
+    display: -webkit-inline-box;
+}
+.fa-star:before {
+    padding: 5px;
+}
+
+.w3-btn, .w3-button {
+    margin-top: 10px;
+}
+.sessao-vencedor {
+    text-align: center !important;  
+}
+
+
 
 /* Medias Querys*/
 
@@ -172,6 +196,9 @@ h1 {
     .painel-pontos {
         width: 250px; 
     }
+    .moves {
+        display: inline-block;
+    }
 }
 
 @media (max-width:375px) {
@@ -209,5 +236,3 @@ h1 {
         width: 215px; 
     }
 }
-
-

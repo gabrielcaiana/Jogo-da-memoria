@@ -19,17 +19,6 @@ inicialModalGame();
 controlCard();
 
 
-//Função para iniciar o jogo
-function inicialModalGame () {
-
-    window.onload = iniciarModal;
-        function iniciarModal() {
-            setTimeout(function(){
-                document.getElementById('id01').style.display="block";
-            },0);
-        }
-}
-
 
 
 // Função para controlar todas as ações de clique dos cards
@@ -60,6 +49,7 @@ function controlCard() {
 
                   if(list_selecionados[0] === list_selecionados[1] ){
                       hits.push(list_selecionados[0,1]);
+                      contador.add();
                       //wins();
                     efeitoCardCorreto(selecionado_antes,false);
                     if(colors[index_colors]!= null){
@@ -74,6 +64,7 @@ function controlCard() {
                 }else{
                     verificarMovimentos();
                     pegarTempoJogo();
+                    contador.add();
                     list_card_reais = [];
                     removeEfeito();
                     setTimeout(function(){ bloquearCard($('ul.deck li'),true);}, 100);
@@ -163,6 +154,7 @@ function abrir_ou_fechar(abrirOuFechar, card){
     $(this).css("pointer-events", "auto");
     bloquearCard($('#reiniciar',true));
     let list = [];
+    contador.restart();
     $(".deck i").each(function(){
         list.push($(this).attr("class"));
     })
@@ -406,11 +398,38 @@ function pararTempo() {
     embaralhar();
 }
 
+//Função para iniciar o jogo
+function inicialModalGame () {
+
+    window.onload = iniciarModal;
+        function iniciarModal() {
+            setTimeout(function(){
+                document.getElementById('id01').style.display="block";
+            },0);
+        }
+}
+
 // Função contador de movimentos
-let counterSet = function(moves) {
-    this.target = document.querySelector(".counter");
+let refreshHTML = function(target, value) {
+	return target.innerHTML = value;
+};
+
+let contadorGeral = function(moves) {
+    this.target = document.querySelector(".contador");
     refreshHTML(this.target, moves);
 }
+contadorGeral.prototype.add = function() {
+	moves++;
+	refreshHTML(this.target, moves);
+};
+contadorGeral.prototype.restart = function() {
+	moves = 0;
+	refreshHTML(this.target, moves);
+};
+
+let contador = new contadorGeral(moves);
+
+
 
 
 
